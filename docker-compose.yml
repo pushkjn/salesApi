@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  postgres:
+    image: postgres:13.3
+    environment:
+      POSTGRES_DB: "salesannouncements"
+      POSTGRES_USER: "springuser"
+      POSTGRES_PASSWORD: "spring"
+    volumes:
+      - .:/init.sql
+      - .:/var/lib/postgresql/data
+
+    ports:
+      - "5432:5432"
