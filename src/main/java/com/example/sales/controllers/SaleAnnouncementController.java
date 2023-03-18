@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.sales.dto.CreateAnnouncementRequest;
 import com.example.sales.dto.CreateAnnouncementResponce;
 import com.example.sales.dto.GetAnnouncementsResponce;
-import com.example.sales.services.ISaleAnnouncementsService;
+import com.example.sales.services.SaleAnnouncementsService;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RestController
 @RequiredArgsConstructor
 public class SaleAnnouncementController {
-    private final ISaleAnnouncementsService service;
+    private final SaleAnnouncementsService service;
 
     @GetMapping(value = "/sales")
     public List<GetAnnouncementsResponce> getAllAnnouncements() {
