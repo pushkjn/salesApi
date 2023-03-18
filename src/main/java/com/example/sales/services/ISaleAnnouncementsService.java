@@ -1,14 +1,17 @@
 package com.example.sales.services;
 
 import java.util.List;
+import java.util.UUID;
 
-import com.example.sales.domain.SaleAnnouncement;
+import com.example.sales.dto.CreateAnnouncementRequest;
+import com.example.sales.dto.CreateAnnouncementResponce;
+import com.example.sales.dto.GetAnnouncementsResponce;
 
 import lombok.NonNull;
 
 public interface ISaleAnnouncementsService {
     @NonNull
-    SaleAnnouncement getAnnouncementById(Long id);
-    List<SaleAnnouncement> getAllAnnouncements();
-    SaleAnnouncement createAnnouncement(@NonNull SaleAnnouncement announcement);
+    GetAnnouncementsResponce getAnnouncementById(UUID id);
+    List<GetAnnouncementsResponce> getAllAnnouncements();
+    CreateAnnouncementResponce createAnnouncement(@NonNull CreateAnnouncementRequest announcement);
 }

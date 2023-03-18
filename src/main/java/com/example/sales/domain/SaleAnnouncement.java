@@ -1,6 +1,10 @@
 package com.example.sales.domain;
 
 import java.util.List;
+import java.util.UUID;
+
+import org.hibernate.annotations.Generated;
+import org.hibernate.annotations.GenerationTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,13 +14,13 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Data
-@Table(name="sales")
+@Table(name = "sales")
 @Entity
 public class SaleAnnouncement {
 
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
 
     @Column
     private List<String> photos;
@@ -26,5 +30,9 @@ public class SaleAnnouncement {
 
     @Column
     private String description;
-    
+
+    @Column(name="external_id")
+    @Generated(GenerationTime.ALWAYS)
+    private UUID externalId;
+
 }
