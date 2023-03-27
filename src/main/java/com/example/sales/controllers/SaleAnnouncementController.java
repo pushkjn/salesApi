@@ -24,9 +24,7 @@ public class SaleAnnouncementController {
 
     @GetMapping(value = "/sales")
     public List<GetAnnouncementsResponce> getAllAnnouncements() {
-        return service.getAllAnnouncements()
-                .stream()
-                .collect(Collectors.toList());
+        return service.getAllAnnouncements();
     }
 
     @PostMapping(value = "/sales")
